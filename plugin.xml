@@ -21,6 +21,7 @@
         </config-file>
  
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/SpinnerPlugin.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
+        <source-file src="src/it/mobimentum/phonegapspinnerplugin/ProgressActivity.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
      </platform>
      
 </plugin>
