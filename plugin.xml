@@ -21,7 +21,7 @@
         </config-file>
  
 				<config-file target="AndroidManifest.xml" parent="/manifest/application">
-		      <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:name="ProgressActivity"
+		      <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:name="it.mobimentum.phonegapspinnerplugin.ProgressActivity"
 		          android:theme="@android:style/Theme.Translucent.NoTitleBar">
 		          <intent-filter>
 		          </intent-filter>
