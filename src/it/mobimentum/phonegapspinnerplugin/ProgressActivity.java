@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
@@ -11,6 +12,8 @@ import android.widget.RelativeLayout.LayoutParams;
 public class ProgressActivity extends Activity {
 	
 	public static final String ACTION_HIDE_PROGRESS = "ProgressActivity.ACTION_HIDE_PROGRESS";
+	
+	private static final String TAG = ProgressActivity.class.getSimpleName();
 	
 //	private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
 //		@Override
@@ -25,6 +28,7 @@ public class ProgressActivity extends Activity {
 		
 		// Intent
 		Intent intent = getIntent();
+		Log.i(TAG, "Intent: "+intent.getAction()+" / "+intent.hasExtra(ACTION_HIDE_PROGRESS));
 		if (intent.hasExtra(ACTION_HIDE_PROGRESS)) {
 			finish();
 			return;
@@ -72,6 +76,7 @@ public class ProgressActivity extends Activity {
 	
 	@Override
 	protected void onNewIntent(Intent intent) {
+		Log.i(TAG, "Intent: "+intent.getAction()+" / "+intent.hasExtra(ACTION_HIDE_PROGRESS));
 		if (intent.hasExtra(ACTION_HIDE_PROGRESS)) {
 			finish();
 			return;
