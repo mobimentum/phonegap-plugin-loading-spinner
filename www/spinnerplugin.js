@@ -1,14 +1,12 @@
 // Spinner plugin
 var spinnerplugin = {
-    show: function(msg, successCallback, errorCallback) {
+    show: function(args, successCallback, errorCallback) {
 		cordova.exec(
             successCallback,
             errorCallback,
             'SpinnerPlugin',
             'show',
-            [{
-                "msg": msg,
-            }]
+            [args]
         );
     },
     hide: function(successCallback, errorCallback) {
