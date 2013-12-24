@@ -1,0 +1,1 @@
+../it/mobimentum/phonegapspinnerplugin/SpinnerPlugin.java

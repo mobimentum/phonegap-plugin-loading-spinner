@@ -1,0 +1,1 @@
+../it/mobimentum/phonegapspinnerplugin/ProgressActivity.java

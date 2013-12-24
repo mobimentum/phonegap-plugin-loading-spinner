@@ -1,5 +1,4 @@
 package it.mobimentum.phonegapspinnerplugin;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -24,7 +23,7 @@ public class SpinnerPlugin extends CordovaPlugin {
 //			Toast.makeText(context, "show(): test ok, msg: "+msg, Toast.LENGTH_LONG).show();
 			
 			// Loading spinner
-			Intent intent = new Intent(context, it.mobimentum.phonegapspinnerplugin.ProgressActivity.class);
+			Intent intent = new Intent(context, ProgressActivity.class);
 			context.startActivity(intent);
 			
 			callbackContext.success();
@@ -36,7 +35,7 @@ public class SpinnerPlugin extends CordovaPlugin {
 //			Toast.makeText(context, "hide(): test ok", Toast.LENGTH_LONG).show();
 			
 			// Loading spinner
-			Intent intent = new Intent(it.mobimentum.phonegapspinnerplugin.ProgressActivity.ACTION_HIDE_PROGRESS);
+			Intent intent = new Intent(ProgressActivity.ACTION_HIDE_PROGRESS);
 			context.sendBroadcast(intent);
 			
 			callbackContext.success();			
