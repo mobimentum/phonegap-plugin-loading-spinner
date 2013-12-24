@@ -11,7 +11,7 @@ Usage
 
 Add theplugin to your project:
 
-    cordova plugin rm it.mobimentum.phonegapspinnerplugin
+    cordova plugin add https://github.com/mobimentum/phonegap-plugin-loading-spinner.git
 
 Show spinner:
 
