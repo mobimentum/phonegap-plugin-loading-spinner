@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
@@ -51,17 +50,17 @@ public class ProgressActivity extends Activity {
 //		registerReceiver(mBroadcastReceiver, new IntentFilter(ACTION_HIDE_PROGRESS));
 
 		// Test hide
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-//				Intent intent = new Intent(ProgressActivity.ACTION_HIDE_PROGRESS);
-//				sendBroadcast(intent);
-				
-				Intent intent = new Intent(getApplicationContext(), ProgressActivity.class);
-				intent.putExtra(ProgressActivity.ACTION_HIDE_PROGRESS, true);
-				startActivity(intent);
-			}
-		}, 5000);
+//		new Handler().postDelayed(new Runnable() {
+//			@Override
+//			public void run() {
+////				Intent intent = new Intent(ProgressActivity.ACTION_HIDE_PROGRESS);
+////				sendBroadcast(intent);
+//				
+//				Intent intent = new Intent(getApplicationContext(), ProgressActivity.class);
+//				intent.putExtra(ProgressActivity.ACTION_HIDE_PROGRESS, true);
+//				startActivity(intent);
+//			}
+//		}, 5000);
 	}
 	
 	@Override
