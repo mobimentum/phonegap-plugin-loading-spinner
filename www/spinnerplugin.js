@@ -12,7 +12,13 @@ var spinnerplugin = {
         );
     },
     hide: function(successCallback, errorCallback) {
-	 
+		cordova.exec(
+            successCallback,
+            errorCallback,
+            'SpinnerPlugin',
+            'hide',
+            []
+        );
     },
 }
 
