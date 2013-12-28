@@ -31,11 +31,11 @@
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/SpinnerPlugin.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/ProgressActivity.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
      </platform>
-      <!-- iO -->
+      <!-- iOs -->
     <platform name="ios">
-                <config-file target="config.xml" parent="plugins">
-                    <plugin name="SpinnerPlugin" value="SpinnerPlugin"/>
-                </config-file>
+        <config-file target="config.xml" parent="plugins">
+            <plugin name="SpinnerPlugin" value="SpinnerPlugin"/>
+        </config-file>
  
         <header-file src="src/ios/SpinnerPlugin.h"  />
         <source-file src="src/ios/SpinnerPlugin.h"  />
