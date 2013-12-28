@@ -36,12 +36,18 @@
      </platform>
       <!-- iOs -->
     <platform name="ios">
-        <config-file target="res/xml/config.xml" parent="/plugins">
-            <plugin name="SpinnerPlugin" value="SpinnerPlugin"/>
+        
+        <!-- Cordova >= 2.3 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="SpinnerPlugin">
+                <param name="ios-package" value="SpinnerPlugin" /> 
+            </feature>
         </config-file>
- 
-        <header-file src="src/ios/SpinnerPlugin.h"  />
-        <source-file src="src/ios/SpinnerPlugin.h"  />
+
+        <header-file src="src/ios/SpinnerPlugin.h" />
+        <source-file src="src/ios/SpinnerPlugin.m" />
+        
+
      </platform>
      
 </plugin>
