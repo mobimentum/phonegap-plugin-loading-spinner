@@ -31,24 +31,14 @@
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/SpinnerPlugin.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/ProgressActivity.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
      </platform>
-      <!-- iOs -->
+      <!-- iO -->
     <platform name="ios">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="SpinnerPlugin">
-                <param name="ios-package" value="it.mobimentum.phonegapspinnerplugin.SpinnerPlugin"/>
-            </feature>
-        </config-file>
- 
-                <config-file target="AndroidManifest.xml" parent="/manifest/application">
-              <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:name="it.mobimentum.phonegapspinnerplugin.ProgressActivity"
-                  android:theme="@android:style/Theme.Translucent.NoTitleBar" android:launchMode="singleInstance">
-                  <intent-filter>
-                  </intent-filter>
-              </activity>
+                <config-file target="config.xml" parent="plugins">
+                    <plugin name="SpinnerPlugin" value="SpinnerPlugin"/>
                 </config-file>
  
-        <header-file src="src/ios/SpinnerPlugin.h" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
-        <source-file src="src/ios/SpinnerPlugin.h" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
+        <header-file src="src/ios/SpinnerPlugin.h"  />
+        <source-file src="src/ios/SpinnerPlugin.h"  />
      </platform>
      
 </plugin>
