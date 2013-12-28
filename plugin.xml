@@ -3,8 +3,11 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="it.mobimentum.phonegapspinnerplugin" version="1.0.0">
 
     <name>SpinnerPlugin</name>
+
     <description>A native loading indicator</description>
+
     <license>MIT</license>
+
     <keywords>phonegap,loading,indicator,spinner</keywords>
  
  
@@ -33,7 +36,7 @@
      </platform>
       <!-- iOs -->
     <platform name="ios">
-        <config-file target="config.xml" parent="plugins">
+        <config-file target="res/xml/config.xml" parent="/plugins">
             <plugin name="SpinnerPlugin" value="SpinnerPlugin"/>
         </config-file>
  
