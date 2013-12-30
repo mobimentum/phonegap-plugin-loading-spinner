@@ -3,8 +3,11 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="it.mobimentum.phonegapspinnerplugin" version="1.0.0">
 
     <name>SpinnerPlugin</name>
+
     <description>A native loading indicator</description>
+
     <license>MIT</license>
+
     <keywords>phonegap,loading,indicator,spinner</keywords>
  
  
@@ -30,6 +33,21 @@
  
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/SpinnerPlugin.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/ProgressActivity.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
+     </platform>
+      <!-- iOs -->
+    <platform name="ios">
+        
+        <!-- Cordova >= 2.3 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="SpinnerPlugin">
+                <param name="ios-package" value="SpinnerPlugin" /> 
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/SpinnerPlugin.h" />
+        <source-file src="src/ios/SpinnerPlugin.m" />
+        
+
      </platform>
      
 </plugin>
