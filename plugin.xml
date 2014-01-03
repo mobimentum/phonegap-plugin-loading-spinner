@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="it.mobimentum.phonegapspinnerplugin" version="1.0.0">
+<plugin xmlns:gap="http://www.phonegap.com/ns/plugins/1.0" id="it.mobimentum.phonegapspinnerplugin" version="1.0.0">
 
     <name>SpinnerPlugin</name>
 
