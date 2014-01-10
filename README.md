@@ -9,13 +9,13 @@ PhoneGap 3 plugin to show a loading spinner with optional dark overlay.
 Usage
 =====
 
-Add theplugin to your project:
+Add plugin to your project:
 
-    cordova plugin rm it.mobimentum.phonegapspinnerplugin
+    cordova plugin add https://github.com/mobimentum/phonegap-plugin-loading-spinner.git
 
 Show spinner:
 
-    spinnerplugin.show({});
+    spinnerplugin.show({}); // do not forget {} args
 
 Hide spinner:
 
