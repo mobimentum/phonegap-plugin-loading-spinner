@@ -17,7 +17,7 @@ public class SpinnerPlugin extends CordovaPlugin {
 		if (action.equals("show")) {
 			// cfr. http://devgirl.org/2013/09/17/how-to-write-a-phonegap-3-0-plugin-for-android/
 			
-			// Test con Toast
+			// Test with Toast
 //			JSONObject argsObj = args.getJSONObject(0);
 //			String msg = argsObj.getString("msg");
 //			Toast.makeText(context, "show(): test ok, msg: "+msg, Toast.LENGTH_LONG).show();
@@ -31,7 +31,7 @@ public class SpinnerPlugin extends CordovaPlugin {
 			return true;
 		}
 		else if (action.equals("hide")) {
-			// Test con Toast
+			// Test with Toast
 //			Toast.makeText(context, "hide(): test ok", Toast.LENGTH_LONG).show();
 			
 			// Loading spinner
