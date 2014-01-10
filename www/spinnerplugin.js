@@ -1,6 +1,9 @@
 // Spinner plugin
 var spinnerplugin = {
     show: function(args, successCallback, errorCallback) {
+	
+		if (typeof(args) === 'undefined') args = {};
+		
 		cordova.exec(
             successCallback,
             errorCallback,

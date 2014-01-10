@@ -12,7 +12,9 @@ import android.widget.RelativeLayout.LayoutParams;
 public class ProgressActivity extends Activity {
 	
 	public static final String ACTION_HIDE_PROGRESS = "ProgressActivity.ACTION_HIDE_PROGRESS";
-	
+
+	public static final String EXTRA_SHOW_OVERLAY = "ProgressActivity.EXTRA_SHOW_OVERLAY";
+
 	private static final String TAG = ProgressActivity.class.getSimpleName();
 	
 //	private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
@@ -33,6 +35,10 @@ public class ProgressActivity extends Activity {
 			finish();
 			return;
 		}
+		
+		// Parameters
+		Bundle extras = intent.getExtras();
+		boolean showOverlay = extras == null || extras.getBoolean(EXTRA_SHOW_OVERLAY, true);
 
 		// ProgressBar
 		ProgressBar bar = new ProgressBar(this, null, android.R.attr.progressBarStyleLarge);
@@ -43,7 +49,7 @@ public class ProgressActivity extends Activity {
 		
 		// Layout
 		RelativeLayout layout = new RelativeLayout(this);
-		layout.setBackgroundColor(Color.parseColor("#cc000000"));
+		if (showOverlay) layout.setBackgroundColor(Color.parseColor("#cc000000"));
 		layout.addView(bar);
 		
 		// Theme
