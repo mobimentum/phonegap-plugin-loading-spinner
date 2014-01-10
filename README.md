@@ -13,9 +13,15 @@ Add plugin to your project:
 
     cordova plugin add https://github.com/mobimentum/phonegap-plugin-loading-spinner.git
 
-Show spinner:
+Show spinner with default arguments:
 
-    spinnerplugin.show({}); // do not forget {} args
+    spinnerplugin.show();
+    
+Show spinner with optional arguments:
+
+    spinnerplugin.show({
+        overlay: false, // defaults to true
+    });
 
 Hide spinner:
 
