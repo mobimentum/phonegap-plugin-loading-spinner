@@ -12,8 +12,9 @@
 @interface SpinnerPlugin : CDVPlugin{
     UIActivityIndicatorView * indicator;
     UIView *background;
+    BOOL showOverlay;
 }
 
--(void)hide:(NSMutableDictionary*)options;
--(void)show:(NSMutableDictionary*)options;
+-(void)hide:(CDVInvokedUrlCommand*)options;
+-(void)show:(CDVInvokedUrlCommand*)options;
 @end
