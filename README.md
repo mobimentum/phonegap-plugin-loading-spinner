@@ -15,7 +15,7 @@ Add plugin to your project:
 
 Show spinner with default arguments:
 
-    spinnerplugin.show({}); // do not forget {} args
+    spinnerplugin.show();
     
 Show spinner with optional arguments:
 
