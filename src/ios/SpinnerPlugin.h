@@ -13,6 +13,8 @@
     UIActivityIndicatorView * indicator;
     UIView *background;
     BOOL showOverlay;
+    int connectionTimeout;
+
 }
 
 -(void)hide:(CDVInvokedUrlCommand*)options;

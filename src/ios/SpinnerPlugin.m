@@ -9,14 +9,31 @@
 #import "SpinnerPlugin.h"
 #import <Cordova/CDV.h>
 #define PARAM_SHOW_OVERLAY @"overlay"
+#define PARAM_AUTO_HIDE_TIMEOUT @"timeout"
 
 @implementation SpinnerPlugin
 - (void)pluginInitialize{
     //params init
     showOverlay = YES;
+    connectionTimeout = 0;
 }
 -(void)show:(CDVInvokedUrlCommand*)options{
     NSMutableDictionary* params = [options.arguments objectAtIndex:0];
+    
+    ;
+    
+    if([params objectForKey:PARAM_AUTO_HIDE_TIMEOUT]){
+        id connectiontimeout =[params objectForKey:PARAM_AUTO_HIDE_TIMEOUT];
+        
+        if([connectiontimeout isKindOfClass:[NSString class]]){
+            NSScanner*scan = [NSScanner scannerWithString:(NSString*)connectiontimeout];
+            [scan scanInt:&connectionTimeout];
+        }else if([connectiontimeout isKindOfClass:[NSNumber class]]){
+            connectionTimeout = [connectiontimeout intValue];
+        }
+    }
+    
+    
     id overlayParam = [params objectForKey:PARAM_SHOW_OVERLAY];
     
     if ([overlayParam isKindOfClass:[NSString class]])
@@ -41,7 +58,9 @@
         }
     }
     
-    
+    if(connectionTimeout>0){
+        NSTimer *timer= [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(hide:) userInfo:Nil repeats:NO];
+    }
     [self.viewController.view addSubview:background];
     
     

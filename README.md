@@ -21,6 +21,7 @@ Show spinner with optional arguments:
 
     spinnerplugin.show({
         overlay: false, // defaults to true
+        timeout: 30     // defaults to 0 (no timeout)
     });
 
 Hide spinner:
