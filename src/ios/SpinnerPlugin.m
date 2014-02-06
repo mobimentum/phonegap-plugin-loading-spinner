@@ -65,7 +65,7 @@
     
     
     [background setBackgroundColor:[UIColor blackColor]];
-    [background setAlpha:0.8f];
+    [background setAlpha:0.4f];
     background.userInteractionEnabled=NO;
     
     [self.viewController.view addSubview:indicator];
