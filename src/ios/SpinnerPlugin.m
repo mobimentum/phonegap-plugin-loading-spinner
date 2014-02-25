@@ -46,6 +46,7 @@
     
     if(!indicator){
         indicator = [[UIActivityIndicatorView alloc]initWithFrame:[UIScreen  mainScreen].bounds];
+        [indicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
         
     }else{
         [indicator removeFromSuperview];
@@ -59,7 +60,7 @@
     }
     
     if(connectionTimeout>0){
-        NSTimer *timer= [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(hide:) userInfo:Nil repeats:NO];
+        NSTimer *timer __attribute__((unused))= [NSTimer scheduledTimerWithTimeInterval:connectionTimeout target:self selector:@selector(hideAfterTimeout:) userInfo:Nil repeats:NO];
     }
     [self.viewController.view addSubview:background];
     
@@ -71,10 +72,23 @@
     [self.viewController.view addSubview:indicator];
 [indicator startAnimating];
 }
+-(void)hideAfterTimeout:(NSTimer*)timer{
+    //NSLog(@"Hiding");
+    [timer invalidate];
+    [self hide:nil];
+}
 -(void)hide:(CDVInvokedUrlCommand*)options{
+    //NSLog(@"Hiding2");
     [indicator stopAnimating];
     [background removeFromSuperview];
     [indicator removeFromSuperview];
+    
 
+}
+-(void)dispose{
+    [super dispose];
+    //NSLog(@"disposing plugin");
+    indicator=nil;
+    background = nil;
 }
 @end
