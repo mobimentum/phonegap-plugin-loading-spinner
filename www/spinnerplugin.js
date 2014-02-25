@@ -1,6 +1,6 @@
 // Spinner plugin
 var spinnerplugin = {
-    show: function(args, successCallback, errorCallback) {
+	show: function(args, successCallback, errorCallback) {
 	
 		if (typeof(args) === 'undefined') args = {};
 		
@@ -11,8 +11,8 @@ var spinnerplugin = {
             'show',
             [args]
         );
-    },
-    hide: function(successCallback, errorCallback) {
+	},
+	hide: function(successCallback, errorCallback) {
 		cordova.exec(
             successCallback,
             errorCallback,
@@ -20,7 +20,7 @@ var spinnerplugin = {
             'hide',
             []
         );
-    },
+	},
 }
 
 // Exports
