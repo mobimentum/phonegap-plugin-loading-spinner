@@ -73,12 +73,12 @@
 [indicator startAnimating];
 }
 -(void)hideAfterTimeout:(NSTimer*)timer{
-    NSLog(@"Hiding");
+    //NSLog(@"Hiding");
     [timer invalidate];
     [self hide:nil];
 }
 -(void)hide:(CDVInvokedUrlCommand*)options{
-    NSLog(@"Hiding2");
+    //NSLog(@"Hiding2");
     [indicator stopAnimating];
     [background removeFromSuperview];
     [indicator removeFromSuperview];
@@ -87,7 +87,7 @@
 }
 -(void)dispose{
     [super dispose];
-    NSLog(@"disposing plugin");
+    //NSLog(@"disposing plugin");
     indicator=nil;
     background = nil;
 }
