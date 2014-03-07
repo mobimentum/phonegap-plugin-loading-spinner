@@ -27,3 +27,27 @@ Show spinner with optional arguments:
 Hide spinner:
 
     spinnerplugin.hide();
+
+Usage with jQuery Mobile
+========================
+
+I encourage you to use the following code to gracefully replace the default jQM loader:
+
+    onDeviceReady: function() {
+		// Native loading spinner
+		if (window.spinnerplugin) {
+			$.extend($.mobile, {
+				loading: function() {
+					// Show/hide spinner
+					var arg = arguments ? arguments[0] : '';
+					if (arg == 'show') spinnerplugin.show({'overlay':true});
+					else if (arg == 'hide') spinnerplugin.hide();			
+
+					// Compatibility with jQM 1.4
+					return { loader: function() { } }
+				}
+			});	
+		}
+	}
+
+Thus, if the SpinnerPlugin is added and working the native spinner would be used, otherwise the standard jQM loader is fired.
