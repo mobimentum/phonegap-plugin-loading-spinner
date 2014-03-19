@@ -33,6 +33,7 @@ public class ProgressActivity extends Activity {
 		Log.i(TAG, "Intent: "+intent.getAction()+" / "+intent.hasExtra(ACTION_HIDE_PROGRESS));
 		if (intent.hasExtra(ACTION_HIDE_PROGRESS)) {
 			finish();
+			this.overridePendingTransition(0, 0);
 			return;
 		}
 		
@@ -85,6 +86,7 @@ public class ProgressActivity extends Activity {
 		Log.i(TAG, "Intent: "+intent.getAction()+" / "+intent.hasExtra(ACTION_HIDE_PROGRESS));
 		if (intent.hasExtra(ACTION_HIDE_PROGRESS)) {
 			finish();
+			this.overridePendingTransition(0, 0);
 			return;
 		}
 		
