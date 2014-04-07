@@ -26,8 +26,9 @@ Show spinner with default arguments:
 Show spinner with optional arguments:
 
     spinnerplugin.show({
-        overlay: false, // defaults to true
-        timeout: 30     // defaults to 0 (no timeout)
+        overlay: false,    // defaults to true
+        timeout: 30,       // defaults to 0 (no timeout)
+        fullscreen: true,  // defaults to false
     });
 
 Hide spinner:
