@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
-import android.widget.Toast;
 
 public class ProgressActivity extends Activity {
 	
@@ -43,7 +42,6 @@ public class ProgressActivity extends Activity {
 		boolean isFullscreen = extras != null && extras.getBoolean(EXTRA_IS_FULLSCREEN, false);
 
 		// Fullscreen
-		Toast.makeText(this, "fullscreen:"+isFullscreen, Toast.LENGTH_SHORT).show();
 		if (isFullscreen) {
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
