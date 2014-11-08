@@ -82,7 +82,7 @@
     [indicator stopAnimating];
     [background removeFromSuperview];
     [indicator removeFromSuperview];
-    
+    background = indicator = nil;
 
 }
 -(void)dispose{
