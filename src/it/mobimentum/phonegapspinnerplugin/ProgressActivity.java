@@ -25,13 +25,18 @@ public class ProgressActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		// Remove title bar
+	    this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+	    // Remove notification bar
+	    this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
 		// Intent
 		Intent intent = getIntent();
 		Log.i(TAG, "Intent: "+intent.getAction()+" / "+intent.hasExtra(ACTION_HIDE_PROGRESS));
 		if (intent.hasExtra(ACTION_HIDE_PROGRESS)) {
 			finish();
-			
-			overridePendingTransition(0, 0);
+			this.overridePendingTransition(0, 0);
 			
 			return;
 		}
@@ -56,7 +61,7 @@ public class ProgressActivity extends Activity {
 		
 		// Layout
 		RelativeLayout layout = new RelativeLayout(this);
-		if (showOverlay) layout.setBackgroundColor(Color.parseColor("#cc000000"));
+		if (showOverlay) layout.setBackgroundColor(Color.parseColor("#aa000000"));
 		layout.addView(bar);
 		
 		// Theme
@@ -69,8 +74,7 @@ public class ProgressActivity extends Activity {
 		Log.i(TAG, "Intent: "+intent.getAction()+" / "+intent.hasExtra(ACTION_HIDE_PROGRESS));
 		if (intent.hasExtra(ACTION_HIDE_PROGRESS)) {
 			finish();
-			
-			overridePendingTransition(0, 0);
+			this.overridePendingTransition(0, 0);
 			
 			return;
 		}

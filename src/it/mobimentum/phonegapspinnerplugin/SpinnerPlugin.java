@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.R.bool;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
@@ -13,8 +14,8 @@ import android.os.Handler;
 public class SpinnerPlugin extends CordovaPlugin {
 	
 	private static final String PARAM_SHOW_OVERLAY = "overlay";
-	
 	private static final String PARAM_SHOW_TIMEOUT = "timeout";
+	private boolean isShown = false;
 
 	private static final String PARAM_IS_FULLSCREEN = "fullscreen";
 
@@ -23,29 +24,39 @@ public class SpinnerPlugin extends CordovaPlugin {
 
 		final Activity context = this.cordova.getActivity();
 		
-		if (action.equals("show")) {
-			// cfr. http://devgirl.org/2013/09/17/how-to-write-a-phonegap-3-0-plugin-for-android/
-
-			// Args
-			JSONObject argsObj = args.getJSONObject(0);
-			Boolean showOverlay = argsObj.has(PARAM_SHOW_OVERLAY) ? argsObj.getBoolean(PARAM_SHOW_OVERLAY) : null;
-			Integer hideTimeout = argsObj.has(PARAM_SHOW_TIMEOUT) ? argsObj.getInt(PARAM_SHOW_TIMEOUT) : null;
-			Boolean isFullscreen = argsObj.has(PARAM_IS_FULLSCREEN) ? argsObj.getBoolean(PARAM_IS_FULLSCREEN) : null;
-
-			// Show
-			show(context, showOverlay, hideTimeout, isFullscreen);
+		if (action.equals("show"))
+		{
+			if( !isShown )
+			{
+				isShown = true;
+				
+				// Args
+				JSONObject argsObj = args.getJSONObject(0);
+				Boolean showOverlay = argsObj.has(PARAM_SHOW_OVERLAY) ? argsObj.getBoolean(PARAM_SHOW_OVERLAY) : null;
+				Integer hideTimeout = argsObj.has(PARAM_SHOW_TIMEOUT) ? argsObj.getInt(PARAM_SHOW_TIMEOUT) : null;
+	
+				// Show
+				show(context, showOverlay, hideTimeout);
+			}
 			
-			callbackContext.success();			
+			callbackContext.success();
+			return true;
 		}
-		else if (action.equals("hide")) {
-			// Hide
-			hide(context);
+		else if (action.equals("hide"))
+		{
+			if( isShown )
+			{
+				isShown = false;
+				
+				// Hide
+				hide(context);
+			}
 			
-			callbackContext.success();			
+			callbackContext.success();
+			return true;
 		}
 		
-		callbackContext.error("Invalid action");
-		
+		callbackContext.error("Spinner received invalid action '"+action+"'");
 		return false;
 	}
 	
