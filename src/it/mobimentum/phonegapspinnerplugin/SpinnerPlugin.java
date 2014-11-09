@@ -15,9 +15,9 @@ public class SpinnerPlugin extends CordovaPlugin {
 	
 	private static final String PARAM_SHOW_OVERLAY = "overlay";
 	private static final String PARAM_SHOW_TIMEOUT = "timeout";
-	private boolean isShown = false;
-
 	private static final String PARAM_IS_FULLSCREEN = "fullscreen";
+	
+	private boolean isShown = false;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -34,9 +34,10 @@ public class SpinnerPlugin extends CordovaPlugin {
 				JSONObject argsObj = args.getJSONObject(0);
 				Boolean showOverlay = argsObj.has(PARAM_SHOW_OVERLAY) ? argsObj.getBoolean(PARAM_SHOW_OVERLAY) : null;
 				Integer hideTimeout = argsObj.has(PARAM_SHOW_TIMEOUT) ? argsObj.getInt(PARAM_SHOW_TIMEOUT) : null;
+				Boolean isFullScreen = argsObj.has(PARAM_IS_FULLSCREEN) ? argsObj.getBoolean(PARAM_IS_FULLSCREEN) : null;
 	
 				// Show
-				show(context, showOverlay, hideTimeout);
+				show(context, showOverlay, hideTimeout, isFullScreen);
 			}
 			
 			callbackContext.success();

@@ -108,7 +108,7 @@
 {
     [indicator stopAnimating];
     [indicator removeFromSuperview];
-    background = indicator = nil;
+    indicator = nil;
 }
 
 -(void)dispose
