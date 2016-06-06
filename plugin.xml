@@ -25,10 +25,7 @@
  
 	<config-file target="AndroidManifest.xml" parent="/manifest/application">
 		<activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:name="it.mobimentum.phonegapspinnerplugin.ProgressActivity"
-		          android:theme="@android:style/Theme.Translucent.NoTitleBar" android:launchMode="singleInstance">
-		          <intent-filter>
-		          </intent-filter>
-	      	</activity>
+		          android:theme="@android:style/Theme.Translucent.NoTitleBar" android:launchMode="singleInstance" />
 	</config-file>
  
         <source-file src="src/it/mobimentum/phonegapspinnerplugin/SpinnerPlugin.java" target-dir="src/it/mobimentum/phonegapspinnerplugin/" />
